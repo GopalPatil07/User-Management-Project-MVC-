@@ -1,4 +1,4 @@
-### User-Management-Project-MVC-
+### User-Management-Project(MVC)
 #### Technology used (Node Js, Express, Handlebars, MySQL and Sequelize ORM)
 
 #### Commands
