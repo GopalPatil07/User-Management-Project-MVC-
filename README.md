@@ -6,3 +6,6 @@
 * npm install express express-handlebars sequelize mysql2 
 * npm install sequelize-cli -g
 * npm install nodemon -D
+
+#### Steps
+* Create the server
