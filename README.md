@@ -2,7 +2,10 @@
 #### Technology used (Node Js, Express, Handlebars, MySQL and Sequelize ORM)
 
 #### Commands
-* npm init -y  => To get package.json
+* npm init -y  => To download all dependencies. And generates 3 extra files 
+       * A repository property with a link to your remote repo
+       * A bugs property with a link to the issues page.
+       * A homepage property that links to the readme.md file.
 * npm install express => The primary use of Express is to provide server-side logic for web and mobile applications.
 * npm install express-handlebars => HandleBars can be used to render web pages to the client side from data on the server-side.
 * npm install sequelize => If you are starting a project from scratch, and your database is still empty, Sequelize can be used since the beginning in order to automate the creation of every table in your database. Also, if you want to use Sequelize to connect to a database that is already filled with tables and data, that works as well!
