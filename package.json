@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/GopalPatil07/User-Management-Project-MVC-/issues"
   },
-  "homepage": "https://github.com/GopalPatil07/User-Management-Project-MVC-#readme"
+  "homepage": "https://github.com/GopalPatil07/User-Management-Project-MVC-#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
