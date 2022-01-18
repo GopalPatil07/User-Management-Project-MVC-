@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("index.html");
+        });
+    </script>
+    <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <hr>
+    <div>
+        <form id="addproduct" action="" method="post">
+            <label>Part Number :</label>
+            <input type="text" id="partNumber" name="partNumber">
+            <label>Part Name :</label>
+            <input type="text" id="partName" name="partName">
+            <label>CGST :</label>
+            <input type="text" id="PName" name="PName">
+            <label>SGST :</label>
+            <input type="number" id="Qty" name="Qty">
+            <label>MRP :</label>
+            <input type="number" id="MRP" name="MRP">
+
+        </form>
+
+    </div>
+
+</html>
