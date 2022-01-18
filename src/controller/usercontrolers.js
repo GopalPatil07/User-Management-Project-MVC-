@@ -16,6 +16,13 @@ const addProduct = async(req , res)=>{
 //     await res.render('addItem');
 // };
 
+const addDealer = async(req , res)=>{
+    await res.render('addDealer');
+};
+const sellItem = async(req , res)=>{
+    await res.render('sellItem');
+};
+
 module.exports = {
-    allUsers, addProduct
+    allUsers, addProduct, addDealer, sellItem
 }

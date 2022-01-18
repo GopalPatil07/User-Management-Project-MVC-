@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Item</title>
+    <script>
+        //function to validate the phone number
+        function validate() {
+            var text = document.getElementById("phone").value;
+            var regx = /^[6-9]\d{9}$/;
+            if (!regx.test(text))
+                alert("Please enter valid phone number");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <form>
+            <label>Order Number : </label>
+            <p><input type="text" placeholder="Enter oreder number" required></p>
+            <label>Customer Name: </label>
+            <p><input type="text" placeholder="Enter customer name" required></p>
+            <label>Email : </label>
+            <p><input type="email" placeholder="Enter customer email"></p>
+            <label>Phone number</label>
+            <p><input type="tel" placeholder="Enter customer Phone Number" id="phone" required /></p>
+            <label>Address</label>
+            <p> <input type="text" placeholder="Enter customer address" name="address" required /></p><hr>
+            <label>Part number : </label>
+            <p><input type="text" placeholder="Enter part number" required></p>
+            <label>Product Name : </label>
+            <p><input type="text" placeholder="Enter product name" required></p>
+            <label>Quantity : </label>
+            <p><input type="number" placeholder="Enter quantity" required></p>
+            <label>MRP : </label>
+            <p><input type="number" placeholder="Enter MRP" required></p>
+            <button type="submit">Sell</button>
+        </form>
+    </div>
+</body>
+
+</html>
