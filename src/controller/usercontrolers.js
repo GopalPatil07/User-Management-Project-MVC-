@@ -1,20 +1,29 @@
 const { render } = require('express/lib/response');
 const Product = require('../models/user');
 
-const allUsers = async(req , res)=>{
+const home = async(req , res)=>{
     await res.render('home');
 };
 const addProduct = async(req , res)=>{
     await res.render('addProduct');
 };
-// const saveProduct = async(req , res)=>{
-//     const {partNumber , productName, productRate, cgst, sgst} = await req.body;
-//     const product = await Product.create({
-//         partNumber:partNumber , productName:productName, productRate:productRate, cgst:cgst, sgst:sgst
-//     }).catch(error=>console.log(error));
-//     console.log(user);
-//     await res.render('addItem');
-// };
+const saveProduct = async(req , res)=>{
+//   let partNumber = req.body.partNumber;
+//   let pName = req.body.pName;
+//   let cgst = req.body.cgst;
+//   let sgst = req.body.sgst;
+//   let pRate = req.body.pRate;
+//   console.log(partNumber);
+//   console.log(pName);
+//   console.log(cgst);
+//   console.log(sgst);
+//   console.log(pRate);
+ const {partNumber, pName, cgst, sgst, pRate} = await req.body;
+Product.create({
+    partNumber:partNumber, pName:pName, cgst:cgst, sgst:sgst, pRate:pRate
+}).catch(error=>console.log(error))
+await res.render ('/home')
+};
 
 const addDealer = async(req , res)=>{
     await res.render('addDealer');
@@ -24,5 +33,5 @@ const sellItem = async(req , res)=>{
 };
 
 module.exports = {
-    allUsers, addProduct, addDealer, sellItem
+    home, addProduct, addDealer, sellItem, saveProduct
 }

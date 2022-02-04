@@ -1,11 +1,11 @@
 const express = require('express');
-const {allUsers, addProduct, addDealer, sellItem} = require('../controller/usercontrolers');
+const {addProduct, addDealer, sellItem, saveProduct, home} = require('../controller/usercontrolers');
 const router = express.Router();
 
-router.get('/' , allUsers);
+router.get('/' , home);
 router.get('/addProduct' , addProduct);
 router.get('/addDealer' , addDealer);
 router.get('/sellItem' , sellItem);
-// router.post('/addItem' , saveProduct);
+router.post('/addProduct' , saveProduct);
 
 module.exports = router;
