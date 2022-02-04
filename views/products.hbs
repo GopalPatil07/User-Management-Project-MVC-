@@ -15,9 +15,13 @@
             padding: 5px;
         }
         .option{
-            background-color: greenyellow;
             color: black;
+            
+        }
+        p{
+            background-color: greenyellow;
             padding: 5px;
+            width: 60px;
         }
         .container {
 	        background-color: black;
@@ -53,6 +57,7 @@ th, td {
                     <th>Price</th>
                     <th>Created Date</th>
                     <th>Updated Date</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,8 +72,8 @@ th, td {
                     <td>{{this.createdAt}}</td>
                     <td>{{this.updatedAt}}</td>
                     <td>
-                        <a class="option" href="update">Update</a>
-                        <a class="option" href="update">Delete</a>
+                       <p> <a class="option" href="update">Update</a></p>
+                        <p><a class="option" href="update">Delete</a></p>
                     </td>
                 </tr>
                 {{/each}}
