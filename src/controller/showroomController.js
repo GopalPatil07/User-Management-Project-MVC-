@@ -1,5 +1,5 @@
 const { render } = require('express/lib/response');
-const Product = require('../models/user');
+const Product = require('../models/product');
 
 const home = async(req , res)=>{
     await res.render('home');

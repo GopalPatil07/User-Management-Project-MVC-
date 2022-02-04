@@ -1,5 +1,5 @@
 const express = require('express');
-const {addProduct, addDealer, sellItem, saveProduct, home} = require('../controller/usercontrolers');
+const {addProduct, addDealer, sellItem, saveProduct, home} = require('../controller/showroomController');
 const router = express.Router();
 
 router.get('/' , home);
