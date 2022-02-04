@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("index.html");
+        });
+    </script>
+    <style>
+        h3{
+            color: white;
+            text-align: center;
+            background-color: olive;
+            padding: 5px;
+        }
+        .option{
+            background-color: greenyellow;
+            color: black;
+            padding: 5px;
+        }
+        .container {
+	        background-color: black;
+}
+
+table {
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #fff;
+}
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <hr>
+    <div class="container">
+        <table>
+            <h3>All Products</h3>
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Part Number</th>
+                    <th>Product Name</th>
+                    <th>CGST</th>
+                    <th>SGST</th>
+                    <th>Price</th>
+                    <th>Created Date</th>
+                    <th>Updated Date</th>
+                </tr>
+            </thead>
+            <tbody>
+               {{#each products}}
+                <tr>
+                    <td>{{this.productId}}</td>
+                    <td>{{this.partNumber}}</td>
+                    <td>{{this.productName}}</td>
+                    <td>{{this.cgst}}</td>
+                    <td>{{this.sgst}}</td>
+                    <td>{{this.productPrice}}</td>
+                    <td>{{this.createdAt}}</td>
+                    <td>{{this.updatedAt}}</td>
+                    <td>
+                        <a class="option" href="update">Update</a>
+                        <a class="option" href="update">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <a class="option" href="addProduct">Add Product</a>
+    </body>

@@ -14,6 +14,7 @@ app.get("/addProduct", router);
 app.post("/addProduct", router);
 app.get("/addDealer", router);
 app.get("/sellItem", router);
+app.get("/products", router);
 app.listen(port, ()=>{
     console.log(`listening to port number ${port}`);
 });
