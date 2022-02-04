@@ -18,9 +18,9 @@ const saveProduct = async(req , res)=>{
 //   console.log(cgst);
 //   console.log(sgst);
 //   console.log(pRate);
- const {partNumber, pName, cgst, sgst, pRate} = await req.body;
+ const {partNumber, productName, cgst, sgst, productPrice} = await req.body;
 Product.create({
-    partNumber:partNumber, pName:pName, cgst:cgst, sgst:sgst, pRate:pRate
+    partNumber:partNumber, productName:productName, cgst:cgst, sgst:sgst, productPrice:productPrice
 }).catch(error=>console.log(error))
 await res.render ('/home')
 };

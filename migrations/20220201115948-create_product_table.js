@@ -6,9 +6,9 @@ module.exports = {
      * Add altering commands here.
      *
      */
-     await queryInterface.createTable('product', 
+     await queryInterface.createTable('products', 
      { 
-       pid:{
+       productId:{
         type:Sequelize.INTEGER(11),
         allowNull:false,
         primaryKey:true,
@@ -19,7 +19,7 @@ module.exports = {
       type:Sequelize.INTEGER(11),
       allowNull:false,
     },
-    partName:{
+    productName:{
       type:Sequelize.STRING,
       allowNull:false,
     },
@@ -31,7 +31,7 @@ module.exports = {
       type:Sequelize.FLOAT(5,2),
       allowNull:false,
     },
-    price:{
+    productPrice:{
       type:Sequelize.FLOAT(5,2),
       allowNull:false,
     },

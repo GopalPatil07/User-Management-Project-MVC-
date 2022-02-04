@@ -2,17 +2,17 @@ const { Sequelize } = require('sequelize');
 const db = require('../../db')
 
 module.exports = db.define ('product' , {
-  productId :{
+  productId:{
     type:Sequelize.INTEGER(11),
     allowNull:false,
     primaryKey:true,
-    autoIncrement:true
-  },
+    autoIncrement:true,
+   },
   partNumber:{
     type:Sequelize.INTEGER(11),
     allowNull:false,
   },
-  pName:{
+  productName:{
     type:Sequelize.STRING,
     allowNull:false,
   },
@@ -24,7 +24,7 @@ module.exports = db.define ('product' , {
     type:Sequelize.FLOAT(5,2),
     allowNull:false,
   },
-  pRate:{
+  productPrice:{
     type:Sequelize.FLOAT(5,2),
     allowNull:false,
   }
