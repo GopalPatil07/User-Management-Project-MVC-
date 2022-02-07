@@ -18,8 +18,13 @@
             color: black;
             
         }
-        p{
+        .p1{
             background-color: greenyellow;
+            padding: 5px;
+            width: 60px;
+        }
+          .p2{
+            background-color: red;
             padding: 5px;
             width: 60px;
         }
@@ -28,15 +33,19 @@
 }
 
 table {
-	border-collapse: collapse;
+	
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-
-th, td {
+th{
+    background-color: cyan;
+    color: black;
+}
+ td {
 	padding: 15px;
 	background-color: rgba(255, 255, 255, 0.2);
 	color: #fff;
+    text-align: center;
 }
     </style>
 </head>
@@ -55,9 +64,8 @@ th, td {
                     <th>CGST</th>
                     <th>SGST</th>
                     <th>Price</th>
-                    <th>Created Date</th>
-                    <th>Updated Date</th>
-                    <th>Options</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -69,17 +77,15 @@ th, td {
                     <td>{{this.cgst}}</td>
                     <td>{{this.sgst}}</td>
                     <td>{{this.productPrice}}</td>
-                    <td>{{this.createdAt}}</td>
-                    <td>{{this.updatedAt}}</td>
                     <td>
-                       <p> <a class="option" href="update">Update</a></p>
-                        <p><a class="option" href="update">Delete</a></p>
+                       <p class="p1"> <a class="option" href="update">Update</a></p>
+                    </td>
+                    <td>
+                         <p class="p2"><a class="option" href="delete">Delete</a></p>
                     </td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
-    <br>
-    <a class="option" href="addProduct">Add Product</a>
     </body>
