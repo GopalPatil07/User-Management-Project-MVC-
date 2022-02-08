@@ -64,28 +64,15 @@
     <hr>
     <div class="container">
         <form action="purchaseProduct" method="post">
-            
-
-
+            <form action="addProduct" method="POST">
+                <label>Part Number :</label>
+                <input type="text" name="partNumber">
+                <label>Part Name :</label>
+                <input type="text" name="productName">
+                <label>Quantity :</label>
+                <input type="number" name="quantity">
+                <button type="submit">Add Product</button>
         </form>
-            <tbody>
-                {{#each products}}
-                <tr>
-                    <td>{{this.productId}}</td>
-                    <td>{{this.partNumber}}</td>
-                    <td>{{this.productName}}</td>
-                    <td>{{this.cgst}}</td>
-                    <td>{{this.sgst}}</td>
-                    <td>{{this.productPrice}}</td>
-                    <td>
-                        <p class="p1"> <a class="option" href="update">Update</a></p>
-                    </td>
-                    <td>
-                        <p class="p2"><a class="option" href="delete">Delete</a></p>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
     </div>
 </body>
+</html>
