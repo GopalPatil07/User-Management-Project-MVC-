@@ -1,0 +1,39 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header")
+        });
+
+    </script>
+    <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <hr>
+    <div>
+        <form action="updateProduct/{{product.productId}}" method="GET">
+            <label>Part Number :</label>
+            <input type="text" name="partNumber" value="{{product.partNumber}}">
+            <label>Product Name :</label>
+            <input type="text" name="productName" value="{{product.productName}}">
+            <label>CGST :</label>
+            <input type="number" name="cgst" value="{{product.cgst}}">
+            <label>SGST :</label>
+            <input type="number" name="sgst" value="{{product.sgst}}">
+            <label>MRP :</label>
+            <input type="number" name="productPrice" value="{{product.productPrice}}">
+            <button type="submit">Update Product</button>
+        </form>
+    </div>
+
+</html>
