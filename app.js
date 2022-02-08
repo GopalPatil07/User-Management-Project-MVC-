@@ -9,6 +9,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.engine('hbs' , exphbs.engine({extname: 'hbs'}));
 app.set("view engine" , 'hbs');
+
 app.get("/", router);
 app.get("/addProduct", router);
 app.post("/addProduct", router);

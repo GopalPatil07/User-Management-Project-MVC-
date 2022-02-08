@@ -1,6 +1,7 @@
 const { raw } = require('express');
 const { render } = require('express/lib/response');
 const Product = require('../models/product');
+const Stock = require('../models/purchase');
 
 const home = async(req , res)=>{
     await res.render('home');
@@ -13,6 +14,9 @@ const saveProduct = async(req , res)=>{
 Product.create({
     partNumber:partNumber, productName:productName, cgst:cgst, sgst:sgst, productPrice:productPrice
 }).catch(error=>console.log(error))
+await Stock.create({
+    partNumber: partNumber, productName: productName, quantity: 0
+}).catch(error => console.log(error))
 await res.render ('addProduct')
 };
 

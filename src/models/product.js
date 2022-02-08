@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const db = require('../../db')
 
-module.exports = db.define ('product' , {
+module.exports = db.define ('products' , {
   productId:{
     type:Sequelize.INTEGER(11),
     allowNull:false,
