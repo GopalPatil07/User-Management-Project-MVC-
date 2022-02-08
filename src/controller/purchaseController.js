@@ -5,15 +5,23 @@ const Stock = require('../models/purchase');
 const home = async (req, res) => {
     await res.render('home');
 };
-const addProduct = async (req, res) => {
-    await res.render('addProduct');
+const purchaseProduct = async (req, res) => {
+    await res.render('purchaseProduct');
 };
-const saveProduct = async (req, res) => {
+const addProduct = async (req, res) => {
     const { partNumber, productName, quantity } = await req.body;
 
-    Stock.create({
-        partNumber: partNumber, productName: productName, quantity: quantity
+    Stock.update({
+        quantity: quantity
+    }, {
+        where: {
+            partNumber:partNumber
+        }
     }).catch(error => console.log(error))
 
-    await res.render('addProduct')
+    await res.render('purchaseProduct')
 };
+
+module.exports = {
+    home, addProduct,purchaseProduct
+}
