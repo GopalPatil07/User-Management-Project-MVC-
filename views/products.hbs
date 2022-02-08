@@ -8,45 +8,54 @@
         });
     </script>
     <style>
-        h3{
+        h3 {
             color: white;
             text-align: center;
             background-color: olive;
             padding: 5px;
         }
-        .option{
+
+        .option {
             color: black;
-            
+
         }
-        .p1{
+
+        .p1 {
             background-color: greenyellow;
             padding: 5px;
             width: 60px;
         }
-          .p2{
+
+        .p2 {
             background-color: red;
             padding: 5px;
             width: 60px;
         }
-        .container {
-	        background-color: black;
-}
 
-table {
-	
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-th{
-    background-color: cyan;
-    color: black;
-}
- td {
-	padding: 15px;
-	background-color: rgba(255, 255, 255, 0.2);
-	color: #fff;
-    text-align: center;
-}
+        .container {
+            background-color: black;
+            width: 700px;
+            ;
+        }
+
+        table {
+
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        th {
+            background-color: cyan;
+            color: black;
+        }
+
+        td {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -69,7 +78,7 @@ th{
                 </tr>
             </thead>
             <tbody>
-               {{#each products}}
+                {{#each products}}
                 <tr>
                     <td>{{this.productId}}</td>
                     <td>{{this.partNumber}}</td>
@@ -78,14 +87,14 @@ th{
                     <td>{{this.sgst}}</td>
                     <td>{{this.productPrice}}</td>
                     <td>
-                       <p class="p1"> <a class="option" href="update">Update</a></p>
+                        <p class="p1"> <a class="option" href="update">Update</a></p>
                     </td>
                     <td>
-                         <p class="p2"><a class="option" href="delete">Delete</a></p>
+                        <p class="p2"><a class="option" href="delete">Delete</a></p>
                     </td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
-    </body>
+</body>
