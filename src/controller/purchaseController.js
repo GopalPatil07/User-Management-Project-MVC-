@@ -8,11 +8,18 @@ const home = async (req, res) => {
 const purchaseProduct = async (req, res) => {
     await res.render('purchaseProduct');
 };
-const addProduct = async (req, res) => {
+const addProduct1 = async (req, res) => {
     const { partNumber, productName, quantity } = await req.body;
-
-    Stock.update({
-        quantity: quantity
+    const qua=await Stock.findOne({
+        attributes :['quantity'],
+        where: {
+            partNumber:partNumber
+        },
+        raw: true
+    }).catch(error=> console.log(error))
+    const quan = parseInt(Object.values(qua))+parseInt(quantity)
+    await Stock.update({
+        quantity: quan
     }, {
         where: {
             partNumber:partNumber
@@ -23,5 +30,5 @@ const addProduct = async (req, res) => {
 };
 
 module.exports = {
-    home, addProduct,purchaseProduct
+    home, addProduct1,purchaseProduct
 }
