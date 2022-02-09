@@ -9,14 +9,19 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.engine('hbs' , exphbs.engine({extname: 'hbs'}));
 app.set("view engine" , 'hbs');
+
 app.get("/", router);
 app.get("/addProduct", router);
 app.post("/addProduct", router);
 app.get("/addDealer", router);
 app.get("/sellItem", router);
 app.get("/products", router);
+<<<<<<< HEAD
 app.get("/editProduct/:productId", router);
 app.get("updateProduct/:productId", router);
+=======
+app.get("/purchaseProduct", router)
+>>>>>>> 059fc8eb4739dca60f4cfb4bbfba8d62cf356180
 app.listen(port, ()=>{
     console.log(`listening to port number ${port}`);
 });
