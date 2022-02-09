@@ -34,6 +34,24 @@ const products = async(req, res)=>{
     await res.render('products' , {products})
 
 }
+const editProduct = async(req , res)=>{
+    const {productId} = await req.params;
+    const product = await Product.findOne({
+        where:{
+            productId:productId
+        },
+        raw:true
+    }).catch(error=>console.log(error))
+    console.log(product)
+    await res.render('editProduct' , {product});
+}
+
+const updateProduct = async(req, res)=>{
+    const {productId} = req.params;
+    const data = req.body;
+    const selector = {where :{productId :productId}}
+    await Product.update(data , selector).catch(error=>console.log(error))
+}
 module.exports = {
-    home, addProduct, addDealer, sellItem, saveProduct, products
+    home, addProduct, addDealer, sellItem, saveProduct, products , editProduct , updateProduct
 }
