@@ -42,7 +42,6 @@ const editProduct = async(req , res)=>{
         },
         raw:true
     }).catch(error=>console.log(error))
-    console.log(product)
     await res.render('editProduct' , {product});
 }
 
