@@ -1,4 +1,4 @@
-### User-Management-Project(MVC)
+### Inventory-Management-Project(MVC)
 #### Technology used (Node Js, Express, Handlebars, MySQL and Sequelize ORM)
 
 #### Commands
