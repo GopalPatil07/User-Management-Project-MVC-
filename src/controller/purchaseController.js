@@ -50,7 +50,7 @@ const showStock=async(req,res)=>{
         raw: true
     }).catch(error => console.log(error));
 
-    await res.render('stock')
+    await res.render('stock',{products})
 }
 
 module.exports = {
