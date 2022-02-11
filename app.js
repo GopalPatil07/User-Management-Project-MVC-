@@ -10,16 +10,22 @@ app.use(express.static('public'));
 app.engine('hbs' , exphbs.engine({extname: 'hbs'}));
 app.set("view engine" , 'hbs');
 
-app.get("/", router);
-app.get("/addProduct", router);
+app.use("/", router);
+
 app.use("/addProduct", router);
-app.get("/addDealer", router);
-app.get("/sellItem", router);
-app.get("/products", router);
-app.get("/editProduct/:productId", router);
-app.get("updateProduct/:productId", router);
-app.get("/addDealer", router);
-app.get("/allDealers", router);
+
+app.use("/sellItem", router);
+
+app.use("/products", router);
+app.use("/editProduct/:productId", router);
+app.use("updateProduct/:productId", router);
+
+app.use("/addDealer", router);
+app.use("/allDealers", router);
+
+app.use("/purchaseProduct",router);
+app.use("showStock",router);
+
 app.listen(port, ()=>{
     console.log(`listening to port number ${port}`);
 });

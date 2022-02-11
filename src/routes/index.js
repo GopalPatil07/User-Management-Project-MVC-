@@ -1,5 +1,6 @@
 const express = require('express');
 const {addProduct, addDealer, sellItem, saveProduct, home, products, editProduct, updateProduct} = require('../controller/showroomController');
+const { updateStock, purchaseProduct, showStock}=require('../controller/purchaseController')
 const router = express.Router();
 
 router.get('/' , home);
@@ -16,4 +17,9 @@ router.post('/addProduct' , saveProduct);
 router.get('/products' , products);
 router.get('/editProduct/:productId' , editProduct);
 router.get('/editProduct/updateProduct/:productId' , updateProduct);
+
+router.get('/purchaseProduct', purchaseProduct);
+router.post('/purchaseProduct', updateStock);
+router.get('/showStock',showStock);
+
 module.exports = router;
