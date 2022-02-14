@@ -1,6 +1,7 @@
 const express = require('express');
-const {addProduct, addDealer, sellItem, saveProduct, home, products, editProduct, updateProduct} = require('../controller/showroomController');
+const {addProduct, sellItem, saveProduct, home, products, editProduct, updateProduct, addDealer} = require('../controller/showroomController');
 const { updateStock, purchaseProduct, showStock}=require('../controller/purchaseController')
+const {saveDealer} = require('../controller/dealerController')
 const router = express.Router();
 
 router.get('/' , home);
@@ -10,7 +11,8 @@ router.get('/products', products);
 router.get('/editProduct/:productId', editProduct);
 router.get('/editProduct/updateProduct/:productId', updateProduct);
 
-router.get('/addDealer' , addDealer);
+// router.get('/addDealer' , addDealer);
+router.post('/addDealer' , saveDealer);
 
 router.get('/sellItem' , sellItem);
 router.post('/addProduct' , saveProduct);

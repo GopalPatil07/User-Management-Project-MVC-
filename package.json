@@ -4,7 +4,8 @@
   "description": "* npm init -y  => To get package.json\r * npm install express express-handlebars sequelize mysql2 \r * npm install sequelize-cli -g\r * npm install nodemon -D",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev" : "nodemon -L app.js"
   },
   "repository": {
     "type": "git",
