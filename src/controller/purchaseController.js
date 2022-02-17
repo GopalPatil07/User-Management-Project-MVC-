@@ -1,7 +1,7 @@
 const { raw } = require('express');
 const { render } = require('express/lib/response');
 const Product = require('../models/product');
-const Stock = require('../models/purchase');
+const Stock = require('../models/stock');
 
 
 const home = async (req, res) => {

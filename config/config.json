@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "tiger",
-    "database": "showroom",
+    "password": "Gopal#123",
+    "database": "yamaha",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

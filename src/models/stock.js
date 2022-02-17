@@ -2,9 +2,9 @@ const { Sequelize } = require('sequelize');
 const db = require('../../db');
 const product = require('./product');
 
-module.exports = db.define('stock', {
-    sid: {
-        type: Sequelize.INTEGER(11),
+module.exports = db.define('stocks', {
+    stockId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,

@@ -18,13 +18,15 @@ app.use("/sellItem", router);
 
 app.use("/products", router);
 app.use("/editProduct/:productId", router);
-app.use("updateProduct/:productId", router);
+app.use("/deleteProduct/:productId", router);
 
 app.use("/addDealer", router);
 app.use("/allDealers", router);
 
 app.use("/purchaseProduct",router);
 app.use("showStock",router);
+
+app.use("sellItem",router);
 
 app.listen(port, ()=>{
     console.log(`listening to port number ${port}`);

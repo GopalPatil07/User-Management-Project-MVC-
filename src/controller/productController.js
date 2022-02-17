@@ -1,8 +1,6 @@
-const { raw } = require('express');
-const { render } = require('express/lib/response');
+
 const Product = require('../models/product');
-const Stock = require('../models/purchase');
-const Dealer = require('../models/dealer');
+const Stock = require('../models/stock');
 
 const home = async (req, res) => {
     await res.render('home');
@@ -19,7 +17,7 @@ const saveProduct = async (req, res) => {
     await Stock.create({
         partNumber: partNumber, productName: productName, quantity: 0
     }).catch(error => console.log(error))
-    await res.render('addProduct')
+    res.send("Product added successfully")
 };
 
 
@@ -53,7 +51,18 @@ const updateProduct = async (req, res) => {
     const data = req.body;
     const selector = { where: { productId: productId } }
     await Product.update(data, selector).catch(error => console.log(error))
+    res.render('home')
 }
+const deleteProduct = async (req, res) => {
+    const { productId } = req.params;
+    await Product.destroy({
+        where :{
+            productId :productId
+        }
+    }).catch(error => console.log(error))
+    res.render('home')
+}
+
 module.exports = {
-    home, addProduct, sellItem, saveProduct, products, editProduct, updateProduct 
+    home, addProduct, sellItem, saveProduct, products, editProduct, updateProduct, deleteProduct
 }
