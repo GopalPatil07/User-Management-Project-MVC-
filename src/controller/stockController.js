@@ -8,19 +8,9 @@ const home = async (req, res) => {
     await res.render('home');
 };
 
-/** code to render purchase product page */
-const purchaseProduct = async (req, res) => {
-    /**quary to get all the part number present in the inventory */
-    const partNumber = await Product.findAll({
-        attributes:['partNumber'],
-        raw: true
-    }).catch(error => console.log(error));
-    await res.render('purchaseProduct',{partNumber});
-};
-
 /** this method update the product quantity in the stock */
 const updateStock = async (req, res) => {
-    const { partNumber, productName, quantity } = await req.body;
+    const { partNumber, quantity } = await req.body;
     
     /**quary to get previous quantity */
     const qua=await Stock.findOne({
@@ -40,7 +30,7 @@ const updateStock = async (req, res) => {
         }
     }).catch(error => console.log(error))
 
-    await res.render('purchaseProduct', {partNumber})
+    await res.send(partNumber)
 };
 
 
@@ -50,9 +40,9 @@ const showStock=async(req,res)=>{
         raw: true
     }).catch(error => console.log(error));
 
-    await res.render('stock',{products})
+    await res.send(products)
 }
 
 module.exports = {
-    home, updateStock,purchaseProduct,showStock
+    home, updateStock,showStock
 }

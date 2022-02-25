@@ -10,14 +10,13 @@ const saveDealer = async(req, res) => {
     Dealer.create({
         dealerName : dealerName , gstNumber : gstNumber , phoneNumber : phoneNumber , email : email , address : address
     }).catch(error => console.log(error));
-    await res.render('home');
 }
 
 const allDealers = async(req , res)=>{
     const dealers = await Dealer.findAll({
         raw : true
     }).catch(error=>console.log(error))
-    await res.render("allDealers" , {dealers})
+    await res.send(dealers)
 }
 module.exports= {
     addDealer, saveDealer, allDealers

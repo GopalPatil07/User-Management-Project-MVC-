@@ -31,7 +31,7 @@ const products = async (req, res) => {
     const products = await Product.findAll({
         raw: true
     }).catch(error => console.log(error))
-    await res.render('products', { products })
+    await res.send( products )
 
 }
 //funcion to edit the product 
@@ -43,7 +43,7 @@ const editProduct = async (req, res) => {
         },
         raw: true
     }).catch(error => console.log(error))
-    await res.render('editProduct', { product });
+    await res.send(product);
 }
 //function to update the product 
 const updateProduct = async (req, res) => {
